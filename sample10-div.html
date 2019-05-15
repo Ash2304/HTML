@@ -1,0 +1,153 @@
+<html>
+  <head>
+    <style>
+      #Parent {
+        width: 900px;
+        height: 200px;
+        background: grey;
+      }
+      #Div1 {
+        width: 250px;
+        height: 100px;
+        background: brown;
+      }
+      #Div2 {
+        width: 250px;
+        height: 100px;
+        background: brown;
+      }
+      #Div3 {
+        width: 250px;
+        height: 100px;
+        background: cadetblue;
+      }
+      #parentNew {
+        width: 900px;
+        height: 200px;
+        border: 1px solid red;
+      }
+      #child1,
+      #child2 {
+        width: 400px;
+        height: 150px;
+        float: left;
+        margin: 20px;
+      }
+      .left,
+      .right {
+        width: 140px;
+        height: 130px;
+        float: left;
+        margin: 5px;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      #Parent1 {
+        width: 1050px;
+        height: 200px;
+      }
+      #child3,
+      #child4,
+      #child5 {
+        width: 300px;
+        height: 150px;
+        margin: 20px;
+        float: left;
+      }
+      #left,
+      #right {
+        width: 140px;
+        height: 140px;
+        float: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="Parent">
+      <div id="Div1">
+        <div id="Div3"></div>
+      </div>
+      <div id="Div2"></div>
+    </div>
+
+    <div id="parentNew">
+      <div id="child1">
+        <div class="left">
+          <h4>Hello Child1</h4>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </p>
+        </div>
+        <div class="right">
+          <img
+            src="https://images.pexels.com/photos/355296/pexels-photo-355296.jpeg?cs=srgb&dl=blur-branches-daylight-355296.jpg&fm=jpg"
+            alt=""
+          />
+        </div>
+      </div>
+      <div id="child2">
+        <div class="right">
+          <img
+            src="https://images.pexels.com/photos/355296/pexels-photo-355296.jpeg?cs=srgb&dl=blur-branches-daylight-355296.jpg&fm=jpg"
+            alt=""
+          />
+        </div>
+        <div class="left">
+          <h4>Hello Child1</h4>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="Parent1">
+      <div id="child3">
+        <div id="left">
+          <h4>Hello Nature</h4>
+          <p>
+            It has survived not only five centuries, but also the leap into
+          </p>
+        </div>
+        <div id="right">
+          <img
+            src="https://images.unsplash.com/photo-1441239372925-ac0b51c4c250?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+          />
+        </div>
+      </div>
+
+      <div id="child4">
+        <div class="right">
+          <img
+            src="https://images.pexels.com/photos/355296/pexels-photo-355296.jpeg?cs=srgb&dl=blur-branches-daylight-355296.jpg&fm=jpg"
+            alt=""
+          />
+        </div>
+        <div id="left">
+          <h4>Hello Nature</h4>
+          <p>
+            It has survived not only five centuries, but also the leap into
+          </p>
+        </div>
+      </div>
+      <div id="child5">
+        <div class="left">
+          <h4>Hello Child1</h4>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </p>
+        </div>
+        <div class="right">
+          <img
+            src="https://images.pexels.com/photos/355296/pexels-photo-355296.jpeg?cs=srgb&dl=blur-branches-daylight-355296.jpg&fm=jpg"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
