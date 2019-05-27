@@ -1,34 +1,87 @@
 <html>
     <head>
 <style>
-#Parent{
-    width:900px;
-    height:400px;
-    border:solid red;
-}
-#Div1{
+#Parent {
     width: 900px;
-    height:50px;
-    border:solid blue;
+    height: 421px;
+    background: antiquewhite;
+}
+#Div1 {
+    width: 900px;
+    height: 73px;
+    background: grey;
+    color: white;
+    text-align: center;
 }
 #Div2 {
     width: 200px;
-    height: 343px;
-    border: solid green;
+    height: 348px;
+    background: green;
+    color: white;
+    text-align: left;
+    float: left;
 }
-#Div3{
-    width:900px;
+#Div3 {
+    width: 651px;
+    float: right;
+}
+#Div4 {
+    width: 900px;
     height: 50px;
-    border:solid brown;
+    float: right;
+    background:brown;
+    border:blue;
+    color:black;
+}
+#Div5 {
+    width: 400px;
+    height: 239px;
+}
+img {
+    width: 400px;
+    height: 239px;
+}
+li {
+    background: blue;
+        margin: 2px;
+        width: 100px;
+        color: white;
+        padding: 5px;
+        text-align: center;
+        float: left;
+        list-style-type: none;
 }
 </style>
     </head>
     <body>
         <div id="Parent">
-            <div id="Div1"></div>
-            <div id="Div2"></div>
-            <div id="Div3"></div>
+            <div id="Div1">
+                <h4 style="color: whitesmoke">NATURE</h4>
+                    <ul>
+                            <li>Home</li>
+                        <li>Gallery</li>
+                            <li>About</li>
+                            <li>Contact Us</li>
+                        </ul>
+            </div>
+            <div id="Div2">
+                
+            </div>
+            <div id="Div3">
+                    <p>
+                            Nature is a British multidisciplinary scientific journal, first published on 4 November 1869.[1] It is one of the most recognizable scientific journals in the world, and was ranked the world's most cited scientific journal by the Science Edition of the 2010 Journal Citation Reports and is ascribed an impact factor of 40.137, making it one of the world's top academic journals
+                        </p>
+                        <div id="Div5">
+<img src="data:image/jpeg;base64,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">
+                        </div>
+            </div>
+            <div id="Div4">
+                <ul>
+                    <li>Contatc Us</li>
+                </ul>
+               <a href="About.html">About</a> 
+            </div>
         </div>
 
     </body>
-</html>
+</html>      

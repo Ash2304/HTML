@@ -1,0 +1,137 @@
+#header-Main {
+    width: 900px;
+    margin: 0 auto;
+    background: orange;
+}
+    header{
+        width:100%;
+        height: 100px;
+        background: black;
+        display: block;
+        margin:0 auto;
+        /* border:darkgrey; */
+    }
+    #header-text {
+    width: 100px;
+    height: 50px;
+    color: white;
+    float: left;
+    margin: 0 auto;
+    margin-left: 30px;
+}
+nav {
+    width: 600px;
+    height: 85px;
+    padding-top: 15px;
+    float: right;
+    margin-right: 30px;
+}
+li {
+    background: gray;
+       width: 100px;
+
+    color: white;
+    padding: 14px;
+    text-align: center;
+    float: left;
+    list-style-type: none;
+}
+h4 {
+    width: 150px;
+    height: 9px;
+    margin: 10px;
+    text-align: left;
+}
+h1 {
+    margin: 0 auto;
+    margin-top: 10px;
+}
+      div#middle-div1 {
+          width:900px;
+          margin:0 auto;
+      }
+
+#img1 img{
+    width:900px;
+    height:360px;
+    margin: 0 auto;
+    margin-top: 20px;
+    /* border: solid blue; */
+    padding:15px;
+    }
+    #b-img1 img {
+    width: 290px;
+    height: 180px;
+    margin: 10px;
+    margin-top: 20px;
+    float: left;
+}
+p{
+    width:290px;
+    padding:0px;
+}
+.v-more{
+        margin-right: 10px;
+}
+#b-img2 img {
+    width: 290px;
+    height: 180px;
+    margin: 19px;
+    margin-left: 20px;
+}
+#img-sec {
+    width: 100%;
+    height: 468px;
+    vertical-align:middle;
+    margin:0;
+    padding:0;
+    /* border:solid red; */
+}
+.left,
+      .right {
+        width: 288px;
+        height: 130px;
+        float: left;
+        margin: 5px;
+        
+      }
+      #b-img3 img {
+    width: 290px;
+    height: 180px;
+    margin: 19px;
+    margin-left: 20px;
+}
+#third-sec {
+    width: 900px;
+    height: 330px;
+    margin: 19px;
+    margin-top: 20px;
+    padding: 15px;
+    /* border: solid indigo; */
+}
+#third-sec img{
+    width: 450px;
+    height: 250px;
+    margin: 19px;
+    margin-top:20px;
+    padding:15px;
+    /* border:solid indigo; */
+
+}
+#footer{
+    width:100%;
+    height:100px;
+    background: grey;
+    /* border: solid red; */
+}
+#footer li {
+        background:lime;
+        margin: 35px;
+        width: 100px;
+        color: indigo;
+        padding: 5px;
+        text-align: center;
+        float: left;
+        list-style-type: none;
+      }
+      
