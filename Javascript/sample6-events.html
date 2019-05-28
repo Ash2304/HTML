@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <button onclick="sayhello()">Click</button> -->
+    <!-- <button onmouseover="sayhello()">Click</button> -->
+    <!-- <button onmouseout="sayhello()">Click</button> -->
+    <input
+      type="text"
+      name=""
+      id=""
+      onblur="sayhello()"
+      onchange="checkValue()"
+      onkeypress="keyPressEvent()"
+    />
+
+    <script>
+      function sayhello() {
+        alert("Hello I am fom click event");
+      }
+
+      function checkValue() {
+        console.log("Hello Some change Happen");
+      }
+      function keyPressEvent() {
+        console.log("keyPressEvent happedn");
+      }
+    </script>
+  </body>
+</html>

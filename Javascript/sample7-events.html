@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="deleteFirst()">Delete First</button>
+    <button onclick="deleteLast()">Delete Last</button>
+
+    <div id="demo"></div>
+    <script>
+      var friends = ["Asha", "ram", "Ravi", "Setha", "Sita"];
+
+      function display() {
+        var allNames = "";
+        for (i = 0; i < friends.length; i++) {
+          allNames = allNames + friends[i] + "<br>";
+          // document.write(friends[i] + "<br>");
+        }
+        document.getElementById("demo").innerHTML = allNames;
+      }
+
+      function deleteFirst() {
+        friends.shift();
+        display();
+      }
+
+      function deleteLast() {
+        friends.pop();
+        display();
+      }
+      display();
+    </script>
+  </body>
+</html>
