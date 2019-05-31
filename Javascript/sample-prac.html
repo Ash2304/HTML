@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <div id="ele"></div>
+        <h3 id="heading">Hello World</h3>
+    <script>
+        document.getElementById("heading").style.color = "blue";
+    for(i=0; i<10; i++){
+            var heading = document.createElement("h3");
+            heading.innerHTML = "Hello World" + i;
+            if(i % 2 == 0){
+                heading.style.background = "grey"
+                heading.style.color = "orange"
+            }
+            else{
+                heading.style.background = "crimson"
+                heading.style.color = "white"
+            }
+            document.body.appendChild(heading);
+            }
+            
+    </script>
+</body>
+</html>

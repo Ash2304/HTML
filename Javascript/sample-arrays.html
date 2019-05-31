@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <script>
+        var friends = ["Asha", "Rachael", "Sangeetha", "Ajung", "Renuka", "Dilip", "Gagan"];
+        friends[7] = "Krishna"
+
+        //friends.push("Bye");
+        //friends.unshift("Hello");
+            //friends.splice(3, 0, "New");
+            //friends.pop();
+            //friends.shift();
+            friends.splice(2, 1);
+
+            friends.sort();
+            friends.reverse();
+
+            console.log(friends.slice(1, 3));
+        for(i=0; i < friends.length; i++){
+            document.write(friends[i] + "<br>")
+        }
+        </script>
+</body>
+</html>
