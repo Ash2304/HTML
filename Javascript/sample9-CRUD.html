@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <select name="" id="mySelect">
+      <option value="1">Sample1</option>
+      <option value="2">Sample2</option>
+      <option value="3">Sample3</option>
+      <option value="4">Sample4</option>
+    </select>
+    <br />
+    <br />
+    <label for="">Subjects</label><br />
+    <input type="checkbox" name="subject" id="" value="HTML" />HTML <br />
+    <input type="checkbox" name="subject" id="" value="CSS" />CSS <br />
+    <input type="checkbox" name="subject" id="" value="Javascript" />Javascript
+    <br />
+    <input type="checkbox" name="subject" id="" value="Angular" />Angular <br />
+
+    <label for="">Gender</label>
+    <input type="radio" name="gender" id="" value="Male" /> Male
+    <input type="radio" name="gender" id="" value="Female" />Female <br />
+    <button onclick="getValue()">Get Value</button>
+
+    <script>
+      function getValue() {
+        var val = document.getElementById("mySelect").value;
+        var allcheckBoxes = document.getElementsByName("subject");
+        allcheckBoxes.forEach(function(obj) {
+          if (obj.checked) {
+            console.log(obj.value);
+          }
+        });
+        var radiobuttons = document.getElementsByName("gender");
+        radiobuttons.forEach(function(obj) {
+          if (obj.checked) {
+            console.log(obj.value);
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

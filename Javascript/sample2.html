@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function LetterChanges(str) {
+        var vowels = ["a", "e", "i", "o", "u"];
+        var string = str.split("");
+
+        var newString = [];
+        for (i = 0; i < string.length; i++) {
+          if (vowels.indexOf(string[i]) > -1) {
+            newString.push(string[i].toUpperCase());
+          } else {
+            newString.push(nextChar(string[i]));
+          }
+        }
+        console.log(string);
+        // code goes here
+        return newString;
+      }
+
+      function nextChar(c) {
+        return String.fromCharCode(c.charCodeAt(0) + 1);
+      }
+    </script>
+  </body>
+</html>

@@ -9,6 +9,12 @@
   <body>
     <button onclick="deleteFirst()">Delete First</button>
     <button onclick="deleteLast()">Delete Last</button>
+    <button onclick="deleteMiddle()">Delete Middle</button>
+    <button onclick="AddBegining()">Add Begining</button>
+    <button onclick="AddLast()">Add Last</button>
+    <button onclick="AddMiddle()">Add Middle</button>
+    <button onclick="sortFriends()">Sort</button>
+    <button onclick="reverseFriends()">Reverse</button>
 
     <div id="demo"></div>
     <script>
@@ -32,6 +38,37 @@
         friends.pop();
         display();
       }
+
+      function deleteMiddle() {
+        friends.splice(2, 1);
+        display();
+      }
+
+      function AddBegining() {
+        friends.unshift("Murali K");
+        display();
+      }
+
+      function AddLast() {
+        friends.push("VMR");
+        display();
+      }
+
+      function AddMiddle() {
+        friends.splice(2, 0, "CCMMK");
+        display();
+      }
+
+      function sortFriends() {
+        friends.sort();
+        display();
+      }
+
+      function reverseFriends() {
+        friends.reverse();
+        display();
+      }
+
       display();
     </script>
   </body>

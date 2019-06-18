@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="AddBegining()">Add Begining</button>
+    <button onclick="AddLast()">Add Last</button>
+    <button onclick="AddMiddle()">Add Middle</button>
+    <button onclick="sortFriends()">Sort</button>
+    <button onclick="reverseFriends()">Reverse</button>
+    <br />
+    <hr />
+    <input type="text" id="myInput" /><button onclick="getData()">Get</button>
+    <script>
+      function getData() {
+        var enteredValue = document.getElementById("myInput").value;
+        console.log(enteredValue);
+      }
+    </script>
+  </body>
+</html>
