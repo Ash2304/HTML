@@ -17,13 +17,13 @@
     <button onclick="deleteIndx()">Delete Index</button>
 
     <!-- Delete Sort -->
-    <button onclick="deleteSort()">Delete Sort</button>
+    <button onclick="sortFriends()"> Sort</button>
 
     <!-- Delete specified -->
     <button onclick="deleteSlice()">Delete slice</button>
 
     <!-- Delete reverse -->
-    <button onclick="deleteRev()">Delete Reverse</button>
+    <button onclick="reverseFriends()"> Reverse</button>
 
     <!-- Add value at index position -->
     <button onclick="addIndx()">Add Index</button>
@@ -71,7 +71,7 @@
 
         // Display Sort
 
-        function deleteSort()
+        function sortFriends()
         {
             friends.sort();
             display();
@@ -85,9 +85,9 @@
             display();
         }
 
-        // Delete Reverse
+        //  Reverse
 
-        function deleteRev(){
+        function reverseFriends(){
             friends.reverse();
             display();
         }

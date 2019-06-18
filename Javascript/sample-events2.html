@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id = "Get" onclick ="getData()">Get</button>
+    <button id ="Add Beginning" onclick ="addBeging()">Add Beginninng</button>
+    <button id ="Add Last" onclick ="addLast()">Add Last</button>
+    
+
+
+
+<h1 id="MyHeading">Hello World</h1>
+    <input type="text" id ="mydiv">
+    <input type ="text" id="addfirst">
+    <input type ="text" id="addlast">
+    
+
+    <script>
+        function getData()
+        {
+            var enteredText =document.getElementById("mydiv").value;
+            var heading =document.getElementById("MyHeading").innerHTML;
+            console.log(heading);
+        }
+        
+        function addBeging()
+        {
+            var enteredText=document.getElementById("addfirst").value;
+            console.log(enteredText);
+        }
+
+        function addLast()
+        {
+            var enteredText=document.getElementById("addlast").value;
+            console.log(enteredText);
+        }
+
+        
+    </script>
+</body>
+</html>

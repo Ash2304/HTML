@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="userName"><br>
+    <input type="text" id="fullName"><br>
+    <input type="text" id="address"><br>
+    <input type="text" id="city"><br>
+    <input type="text" id="state"><br>
+    <input type="text" id="zip">
+    
+
+    <button onclick="addUser()">Add</button>
+    <hr>
+    <select name="" id="myName" onchange="showUserInfo()"></select>
+    <hr>
+    <div id="demo"></div>
+    <script>
+        users=[]
+    function  addUser(){
+        var user={
+            userName:document.getElementById("userName").value,
+            fullName:document.getElementById("fullName").value,
+            address:document.getElementById("address").value,
+            city:document.getElementById("city").value,
+            state:document.getElementById("state").value,
+            zip:document.getElementById("zip").value
+        }
+        users.push(user)
+        displayUsers()
+        clearForm(user)
+    }
+
+    function displayUsers(){
+        document.getElementById("myName").innerHTML = ""
+        for (i=0;i<users.length;i++){
+            var option = document.createElement("option")
+            option.innerHTML = users[i].fullName
+            document.getElementById("myName").appendChild(option)
+        }
+    }
+
+    function clearForm(obj){
+        for(a in obj){
+            document.getElementById(a).value = ""
+
+        }
+    }
+
+    function showUserInfo()
+    {
+    var details = document.getElementById("myName").value
+    console.log(details)
+    console.log(users)
+    
+    for(i=0;i<users.length;i++){
+        if(details == users[i].fullName){
+            displayMatchUser(users[i])
+        }
+    }
+    }
+function displayMatchUser(obj){
+    document.getElementById("demo").innerHTML = ""
+
+var results =""
+for(a in obj){
+    results = results+obj[a]+"<br>"
+}
+document.getElementById("demo").innerHTML = results
+}
+    </script>
+</body>
+</html>
