@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Events</title>
+</head>
+<body>
+    <!-- Delete first -->
+    <button onclick="deleteFirst()">Delete First</button>
+
+    <!-- Delete Last -->
+    <button onclick="deleteLast()">Delete Last</button>
+
+    <!-- Delete value at speciified position -->
+    <button onclick="deleteIndx()">Delete Index</button>
+
+    <!-- Delete Sort -->
+    <button onclick="sortFriends()"> Sort</button>
+
+    <!-- Delete specified -->
+    <button onclick="deleteSlice()">Delete slice</button>
+
+    <!-- Delete reverse -->
+    <button onclick="reverseFriends()"> Reverse</button>
+
+    <!-- Add value at index position -->
+    <button onclick="addIndx()">Add Index</button>
+
+
+    <div id="demo"></div>
+    <script>
+        var friends = ["Asha", "Rachael", "Sangeetha", "Ajung", "Renuka", "Dilip", "Gagan"];
+
+        function display()
+        {
+            var allNames = "";
+            for(i=0; i < friends.length; i++)
+            {
+                allNames = allNames + friends[i] + "<br>";
+            }
+            document.getElementById("demo").innerHTML = allNames;
+            
+        }
+        
+
+        //Display Delete first
+
+        function deleteFirst()
+        {
+            friends.shift();
+            display();
+        }
+
+        // Display Delete last
+
+        function deleteLast()
+        {
+            friends.pop();
+            display();
+        }
+
+        //Display Delete index
+
+        function deleteIndx()
+        {
+            friends.splice(2, 1);
+            display();
+        }
+
+        // Display Sort
+
+        function sortFriends()
+        {
+            friends.sort();
+            display();
+        }
+
+        //Delete specified values
+
+        function deleteSlice()
+        {
+            console.log(friends.slice(1, 5));
+            display();
+        }
+
+        //  Reverse
+
+        function reverseFriends(){
+            friends.reverse();
+            display();
+        }
+        
+        //Add index value
+
+        function addIndx()
+        {
+            friends.splice(3, 0, "Ash");
+            display();
+        }
+        display();
+        // Display array
+
+    </script>
+</body>
+</html>

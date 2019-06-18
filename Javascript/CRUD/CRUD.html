@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        First Name: <input type="text" name="" id="fname"><br><br>
+        Last Name : <input type="text" name="" id="lname"><br><br>
+        Email : <input type="text" name="" id="emailadr"><br><br>
+        <button onclick="addUser()" type="button">Add</button>
+        <button onclick="updateUser()" type="button">Update</button>
+
+        <!-- <button onclick ="delUser()" type = "button">Delete</button> -->
+        <!-- <button onclick ="editUser()" type = "button">Edit</button> -->
+    </form>
+    <!-- <div id="demo" onclick="displayForm()"></div> -->
+    <table border="1">
+        <thead>
+            <th>First Name </th>
+            <th>Last Name </th>
+            <th>Email </th>
+            <th>Edit</th>
+            <th> Delete</th>
+        </thead>
+        <tbody id="MyTable">
+
+        </tbody>
+    </table>
+    <script>
+        // Create a array to handle Multiple Values
+        var users = []
+
+        //Get the User from HTML form and Add to the Array
+        function addUser() {
+            var obj = {
+                fname: document.getElementById("fname").value,
+                lname: document.getElementById("lname").value,
+                emailadr: document.getElementById("emailadr").value
+            }
+            console.log(obj)
+
+            //Clear Form
+            clearForm(obj)
+
+            //Add Obj to Array
+            users.push(obj)
+
+            //Display Data
+            displayData(users)
+        }
+        //delete values
+        //function delUser()
+
+
+
+        function clearForm(obj) {
+            for (a in obj) {
+                document.getElementById(a).value = ""
+            }
+        }
+
+        //Displaying in table
+        function displayData(users) {
+            document.getElementById("MyTable").innerHTML = ""
+            for (i = 0; i < users.length; i++) {
+                var tr = document.createElement("tr")
+
+                //Adding the Object Iteration 
+                for (a in users[i]) {
+                    var td = document.createElement("td")
+                    td.innerHTML = users[i][a]
+                    tr.appendChild(td)
+                }
+
+                //Creating Tds for Edit And Delete
+                var editTd = document.createElement("td")
+                var deleteTd = document.createElement("td")
+
+                // Creating and Adding Buttons for Edit And Delete TD's
+
+                var editBtn = document.createElement("button")
+                editBtn.setAttribute("onclick", "editUser("+i+")")
+                editBtn.innerHTML = "EDIT"
+                var deleteBtn = document.createElement("button")
+                //Adding event Listners to Row & Passing the Row Index in eventListenres
+                deleteBtn.setAttribute("onclick", "delUser("+i+")")
+                deleteBtn.innerHTML = "DELETE"
+
+                // Adding Buttons to TD
+                editTd.appendChild(editBtn)
+                deleteTd.appendChild(deleteBtn)
+
+                //Adding Edit and Delete TD's to the row
+                tr.appendChild(editTd)
+                tr.appendChild(deleteTd)
+
+                document.getElementById("MyTable").appendChild(tr)
+
+            }
+
+        }
+
+        // To Delete the User
+        function delUser(i) {
+            alert("Good Evening "+i)
+
+            //will delete the item in given index
+            users.splice(i,1)
+
+            //Display the Latest available Data 
+            displayData(users)
+        }
+
+//To Edit the User
+        function editUser(i) {
+            // alert("Hello "+i)
+            console.log(users[i])
+            index = i;
+            document.getElementById("fname").value = users[i].fname
+            document.getElementById("lname").value = users[i].lname
+            document.getElementById("emailadr").value = users[i].emailadr
+            
+        }
+
+
+        function updateUser(){
+            var updatedObj={
+                fname:document.getElementById("fname").value,
+                lname:document.getElementById("lname").value,
+                emailadr:document.getElementById("emailadr").value
+            }
+            users[index] = updatedObj
+            displayData(users)
+            clearForm(updatedObj)
+        }
+    </script>
+</body>
+
+</html>

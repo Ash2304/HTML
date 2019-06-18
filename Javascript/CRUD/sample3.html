@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   FullName: <input type="text" id="fullName"><br>
+    Address:<input type="text" id="address"><br>
+    State:<input type="text" id="state"><br>
+
+    <button onclick="saveUser()">Save</button>
+    <hr>
+    <select name="" id="myName" onchange="showUserInfor()"></select>
+    <hr>
+    <div id="demo"></div>
+    <script>
+    users=[]
+    function saveUser(){
+        var det = {
+            fullName:document.getElementById("fullName").value,
+            address:document.getElementById("address").value,
+            state:document.getElementById("state").value
+        }
+        users.push(det)
+        displayUsers()
+        clearForm(det)
+    }
+    
+    function displayUsers(){
+        document.getElementById("myName").innerHTML=""
+        for(i=0;i<users.length;i++){
+            var option = document.createElement("option")
+            option.innerHTML = users[i].fullName
+            document.getElementById("myName").appendChild(option)
+        }
+}
+
+    function clearForm(obj)
+    {
+        for(a in obj){
+            document.getElementById(a).value = ""
+        }
+    }
+
+    function showUserInfor(){
+        var details = document.getElementById("myName").value
+        console.log(details)
+        console.log(users)
+
+        for(i=0;i<users.length;i++){
+            if(details == users[i].fullName){
+                dispmatchUser(users[i])
+            }            
+        }
+
+    }
+
+    function dispmatchUser(obj){
+        document.getElementById("demo").innerHTML = ""
+        var results = ""
+        for(a in obj){
+            results = results+obj[a]+"<br>"
+        }
+        document.getElementById("demo").innerHTML = results
+    }
+
+
+    </script>
+
+</body>
+</html>

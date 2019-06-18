@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Practice</title>
+</head>
+<body>
+    <form>
+        First Name:<input type ="text" id = "Fname"> <br><br>
+        Last Name: <input type = "text" id ="Lname"> <br><br>
+        Email : <input type = "text" id = "emailadr"><br><br>   
+        Address: <input type ="text" id= "Addr"><br><br> 
+
+        <input type="button" value="Submit" onclick ="displayData()">
+        
+    </form>
+    <div id="demo" onclick="displayForm()">
+
+    </div>
+        <script>
+            var users=[]
+        function displayData(){
+        
+            var objData= {
+                fname:document.getElementById("Fname").value,
+                lname:document.getElementById("Lname").value,
+                emailadr:document.getElementById("emailadr").value,
+                addr:document.getElementById("Addr").value
+            }
+            users.push(objData)
+
+            
+
+            console.log(objData)
+        }
+        //function displayForm(){
+        // document.getElementById("Fname").value = users.fname
+        // document.getElementById("Lname").value = users.lname
+
+        // document.getElementById("emailadr").value = users.emailadr
+        // document.getElementById("Addr").value = users.addr
+        // }
+        </script>
+</body>
+</html>

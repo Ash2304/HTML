@@ -1,0 +1,12 @@
+1. Capture a Object from a Form .
+2. Push in to array
+3. Use for loop to iterate array of Objects 
+
+
+4. Add a Edit Button and Delete Button
+5. Add Event Handlers as Attributes
+6. Pass Index Value in to Methods (Edit And Delete)
+7. Find Out the Object to Edit and Delete
+8. Delete a Object with Splice Method and display the latest Data
+9. Display the Object to be Edited in form 
+10. Update the Object and Replace to the clicked Row .

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form</title>
+</head>
+
+<body>
+    <form action="">
+        <h3>Name and Address</h3>
+        Do you use CiviCRM?
+        <label>
+            Yes <input type="radio" id="yradio">
+            No <input type="radio" id="No"> <br><br>
+        </label>
+        How long have you been using CiviCRM? 
+        <select name="" id="crm">
+            <option value="CRM1">CRM1</option>
+            <option value="CRM2">CRM2</option>
+            <option value="CRM3">CRM3</option>
+            <option value="CRM4">CRM4</option>
+            <option value="CRM5">CRM5</option>
+
+        </select>
+        <br><br>
+        Which CMS do you use? 
+        <select name="" id="cms">
+                <option value="CMS1">CMS1</option>
+                <option value="CMS2">CMS2</option>
+                <option value="CMS3">CMS3</option>
+                <option value="CMS4">CMS4</option>
+                <option value="CMS5">CMS5</option>
+    
+            </select><br><br>
+        Your skill set<select name="" id="skill">
+                <option value="CMS1">HTML</option>
+                <option value="CMS2">CSS</option>
+                <option value="CMS3">Javascript</option>
+                <option value="CMS4">Angular</option>
+                <option value="CMS5">React</option>
+    
+            </select><br><br>
+        Email address: <input type="text" id="emailadr"><br><br>
+        First Name: <input type="text" id="fname"><br><br>
+        Last Name: <input type="text" id="lname"><br><br>
+        Street address(Home): <input type="text" id="addr"><br><br>
+        City: <input type="text" id="city"><br><br>
+        Postal code: <input type="text" id="pcode"><br><br>
+        Country: 
+        <select name="" id="country">
+                <option value="India">India</option>
+                <option value="United States">United States</option>
+                <option value="Australia">Javascript</option>
+                <option value="Canada">Australia</option>
+                <option value="Germany">Germany</option>
+    
+            </select><br><br>
+        State: 
+        <select name="" id="state">
+                <option value="Karntaka">Karntaka</option>
+                <option value="Punjab">Punjab</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Haryana">Haryana</option>
+                <option value="Gujarat">Gujarat</option>
+    
+            </select><br><br>
+
+        <button onclick="saveUser()" type="button">Save</button>
+        <button onclick="canUser()" type="button">Cancel</button>
+        <button onclick="updateDet()" type="button">Update</button>
+
+
+    </form>
+    
+    <!-- <table border="1">
+            <thead>
+                <th>CRM</th>
+                <th>CMS</th>
+                <th>Skill</th>
+                <th>Email address</th>
+                <th>First Name </th>
+                <th>Last Name </th>
+                <th>Street address </th>
+                <th>Country</th>
+                <th> Postal code</th>
+                <th>Country</th>
+                <th>State</th>
+            </thead>
+            <tbody id="MyTable">
+    
+            </tbody>
+        </table> -->
+        <div id="details">
+            <select name="" id="myDetails" onchange = "showUserInfo()">
+                <option value="">Select User</option>
+            </select> 
+         </div>
+         <div id="demo"></div>
+    <script>
+        var users = []
+
+        function saveUser()
+        {
+            var det ={
+                cms:document.getElementById("cms").value,
+                crm:document.getElementById("crm").value,
+                skill:document.getElementById("skill").value,
+                emailadr:document.getElementById("emailadr").value,
+                fname:document.getElementById("fname").value,
+                lname:document.getElementById("lname").value,
+                addr:document.getElementById("addr").value,
+                city:document.getElementById("city").value,
+                pcode:document.getElementById("pcode").value,
+                country:document.getElementById("country").value,
+                state:document.getElementById("state").value
+
+            }
+            console.log(det)
+
+            users.push(det)
+            clearForm(det)
+            displaydata(users)
+        }
+
+
+        function displaydata(users){
+
+                document.getElementById('myDetails').innerHTML = ""
+                for(i=0; i<users.length; i++){
+                    var option = document.createElement("option")
+                    option.innerHTML = users[i].fname
+                    document.getElementById("myDetails").appendChild(option)
+                }
+        }
+            //document.getElementById("MyTable").innerHTML = ""
+            // for (i = 0; i < users.length; i++) {
+            //     var tr = document.createElement("tr")
+
+            //     for(a in users[i]){
+            //         var td = document.createElement("td")
+            //         td.innerHTML = users[i][a]
+            //         tr.appendChild(td)
+            //     }
+            //     // creating Td's
+
+            //     var editTd = document.createElement("td")
+            //     var delTd =document.createElement("td")
+
+            //     // creating buttons for edit and delete
+
+            //     var editBtn = document.createElement("button")
+            //     editBtn.setAttribute("onclick", "editUser("+i+")")
+            //     editBtn.innerHTML = "EDIT"
+
+            //     var delBtn = document.createElement("button")
+            //     delBtn.setAttribute("onclick", "delUser("+i+")")
+            //     delBtn.innerHTML = "DELETE"
+
+            //     editTd.appendChild(editBtn)
+            //     delTd.appendChild(delBtn)
+
+            //     tr.appendChild(editTd)
+            //     tr.appendChild(delTd)
+
+            //     document.getElementById("MyTable").appendChild(tr)
+
+       // }
+    //}
+        
+
+        function editUser(i)
+        {
+            index = i;
+                document.getElementById("cms").value = users[i].cms
+                document.getElementById("crm").value = users[i].crm
+                document.getElementById("skill").value= users[i].skill
+                document.getElementById("emailadr").value = users[i].emailadr
+                document.getElementById("fname").value = users[i].fname
+                document.getElementById("lname").value = users[i].lname
+                document.getElementById("addr").value = users[i].addr
+                document.getElementById("city").value = users[i].city
+                document.getElementById("pcode").value = users[i].pcode
+                document.getElementById("country").value = users[i].country
+                document.getElementById("state").value = users[i].state
+        }
+
+        function updateDet(){
+            var updatedDet = {
+                cms:document.getElementById("cms").value,
+                crm:document.getElementById("crm").value,
+                skill:document.getElementById("skill").value,
+                emailadr:document.getElementById("emailadr").value,
+                fname:document.getElementById("fname").value,
+                lname:document.getElementById("lname").value,
+                addr:document.getElementById("addr").value,
+                city:document.getElementById("city").value,
+                pcode:document.getElementById("pcode").value,
+                country:document.getElementById("country").value,
+                state:document.getElementById("state").value
+            }
+            users[index] = updatedDet
+            displaydata(users)
+            
+        }
+        function delUser(i) {
+            // alert("Good Evening")
+            users.splice(i,1)
+            displaydata(users)
+        }
+
+        function clearForm(obj) 
+        {
+            for(a in obj){
+                document.getElementById(a).value = ""
+            }
+        }
+
+        function showUserInfo(){
+            var details = document.getElementById("myDetails").value
+            console.log(details)
+            console.log(users)
+
+            for(i=0; i<users.length; i++){
+                if(details == users[i].fname){
+                    displayMatchUser(users[i])
+                }
+            }
+        }
+
+        function displayMatchUser(obj){
+            document.getElementById("demo").innerHTML = ""
+            var results = ""
+
+            for(a in obj){
+                
+            results = results + obj[a] + "<br>"
+            }
+            document.getElementById("demo").innerHTML = results
+        }
+    </script>
+</body>
+
+</html>
