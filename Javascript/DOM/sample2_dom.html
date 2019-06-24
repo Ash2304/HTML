@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="demo">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+      <li>Item 4</li>
+      <li>Item 5</li>
+    </ul>
+
+    <script>
+      document.getElementById("demo").onclick = function(e) {
+        console.log(e.target);
+        var selectedElement = e.target;
+        var parentElement = e.target.parentElement;
+        parentElement.removeChild(selectedElement);
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var message = "Welcome to Javascript Training";
+      //Will give us no of characters in a string
+      //   message.length;
+
+      // will give us charcaters from index no 0th index to 7 characters
+      //   message.substr(0, 7);
+
+      // will give us the characters from 11th index to 10 characters
+      //   message.substr(11, 10);
+
+      // will give us characters from 11th index to 21st Index
+      //   message.substring(11, 21);
+
+      console.log(message.indexOf("Javascript"));
+      console.log(message.indexOf("Murali"));
+      var newWord = message.replace("Javascript", "Murali");
+      console.log(newWord);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="#" name="some">I am anchor 1</a>
+    <a href="" name="some">I am anchor 1</a>
+    <a href="" name="some">I am anchor 1</a>
+    <a href="" name="some">I am anchor 1</a>
+    <a href="" name="some">I am anchor 1</a>
+    <a href="" name="some">I am anchor 1</a>
+    <a href="" name="some">I am anchor 1</a>
+
+    <ul>
+      <li>Item1</li>
+      <li>Item1</li>
+      <li>Item1</li>
+      <li>Item1</li>
+      <li>Item1</li>
+    </ul>
+    <!-- Type 1 -->
+    <!-- <button onclick="sayhello()">Click</button> -->
+    <button>Click</button>
+
+    <script>
+      // Type 2
+      //   document.getElementById("myBtn").onclick = sayhello;
+
+      // Type 3
+      //   document.getElementsByTagName("button")[0].onclick = sayhello;
+
+      // Type 4
+      //   document.querySelector("button").onclick = sayhello;
+
+      //   Type 5
+      //   document.querySelectorAll("button")[0].onclick = sayhello;
+
+      // Type 6
+      //   document
+      //     .querySelectorAll("button")[0]
+      //     .addEventListener("click", function() {
+      //       alert("hello ");
+      //     });
+
+      //   Type 7:
+      //   document
+      //     .getElementsByTagName("button")[0]
+      //     .setAttribute("onclick", "sayhello()");
+
+      function sayhello() {
+        alert("Hello World");
+      }
+    </script>
+  </body>
+</html>

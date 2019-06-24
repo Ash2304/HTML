@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Asynchronous Javascript And XML -->
+    <button onclick="getData()">Get Data</button>
+    <script>
+      function getData() {
+        var getInfo = new XMLHttpRequest();
+        getInfo.onreadystatechange = function() {
+          if (getInfo.status == 200 && getInfo.readyState == 4) {
+            var data = JSON.parse(getInfo.responseText);
+            console.log(getInfo.responseText);
+            console.log(typeof getInfo.responseText);
+            console.log(data);
+            console.log(typeof data);
+          }
+        };
+
+        getInfo.open(
+          "GET",
+          "http://www.filltext.com/?rows=2&fname={firstName}&lname={lastName}&pretty=true"
+        );
+        getInfo.send();
+      }
+    </script>
+  </body>
+</html>
