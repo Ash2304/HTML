@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form</title>
+</head>
+<body>
+    <form action="">
+        First Name: <input type="text" id="fname"><br><br>
+        Last Name : <input type="text" id="lname"><br><br>
+        Email : <input type="text" id="email"><br><br>
+        Phone No : <input type="text" id="phno"><br><br>
+
+        <button type="button" onclick="saveUser()">Submit</button>
+
+    </form>
+
+    <script>
+    
+    function saveUser(){
+        
+        var user = {
+            fname: '',
+            lname: '',
+            email: '',
+            phno:''
+        }
+
+        for(a in user){
+            if(a == 'phno'){
+                if(document.getElementById(a).value.length != 10){
+                    alert("Please Enter 10 Charcters Only")
+                }else{
+                    user[a] = document.getElementById(a).value
+
+                }
+            }else{
+                if(document.getElementById(a).value ==""){
+                alert("Please enter "+a)
+                break
+            }else{
+                user[a] = document.getElementById(a).value
+            }
+            }
+            
+        }
+        console.log(user)
+    }
+
+    
+    </script>
+
+</body>
+</html>

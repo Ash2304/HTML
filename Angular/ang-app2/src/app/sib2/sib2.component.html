@@ -1,0 +1,11 @@
+<p>sib2 works!</p>
+{{msgFromSib1}}
+<h3>Object From Sib1:</h3>
+<ul *ngIf = "objFromSib1">
+    <li *ngFor="let prop of keys">{{objFromSib1[prop]}}</li>
+</ul>
+<h3>Array From Sib1:</h3>
+<ul *ngFor = "let user of arrayFromSib1">
+    <li>{{user.username}}</li>
+    <li>{{user.email}}</li>
+</ul>

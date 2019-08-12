@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <button onclick="getUser()">Get</button>
+    
+    
+      <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Email</th>
+                <th scope="col">Username</th>
+                <th scope="col">Password</th>
+              </tr>
+            </thead>
+            <tbody id = "myTable">
+              
+            </tbody>
+          </table>
+          <!-- <form action="">
+              ID: <input type = "text" id = "id"><br>
+              Email: <input type="text" id="email"><br>
+              Username: <input type="text" id="username"><br>
+              Password: <input type="text" id="password">
+          </form>
+
+          
+          <button onclick="updateUser()" type="button">Update</button> -->
+          
+
+    <script>
+        var data;
+    function getUser(){
+
+        var getInfo = new XMLHttpRequest();
+        getInfo.onreadystatechange = function(){
+            if(getInfo.readyState == 4 && getInfo.status == 200){
+                data = JSON.parse(getInfo.responseText);
+                console.log(data)
+                displayData(data);
+            }
+        }
+
+        getInfo.open("Get","http://www.filltext.com/?rows=10&id={index}&email={email}&username={username}&password={randomString|5}&pretty=true")
+        getInfo.send();
+    }
+
+        function displayData(data){
+            document.getElementById("myTable").innerHTML = ""
+            for(i=0;i<data.length;i++){
+                var tr = document.createElement("tr")
+                for(a in data[i]){
+                    var td = document.createElement("td")
+                    td.innerHTML= data[i][a]
+                    tr.appendChild(td)
+                }
+                var editTd = document.createElement("td")
+                var delTd = document.createElement("td")
+
+                var editBtn = document.createElement("button")
+                 editBtn.setAttribute("onclick","edit()")
+                // editBtn.setAttribute("onclick","editUser("+i+")")
+                // editBtn.setAttribute("onclick",location.href="edit-ajax.html")
+                editBtn.innerHTML = "Edit"
+                
+
+                var delBtn = document.createElement("button")
+                delBtn.setAttribute("onclick","delUser("+i+")")
+                delBtn.innerHTML = "Delete"
+
+                editTd.appendChild(editBtn)
+                delTd.appendChild(delBtn)
+
+                tr.appendChild(editTd)
+                tr.appendChild(delTd)
+
+                document.getElementById("myTable").appendChild(tr)
+
+            }
+
+        }
+    
+
+        function delUser(i){
+
+            // alert("Hi")
+
+            data.splice(i,1)
+            displayData(data)
+        }
+
+    function edit(){
+
+    location.href = "edit-ajax.html"
+    }
+
+        
+        
+    </script>
+
+</body>
+</html>

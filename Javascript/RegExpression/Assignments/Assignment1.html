@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Assignment 1</title>
+</head>
+
+<body>
+    <!-- Create a button to display city names -->
+    <!-- <input type="text" id="city1"> 
+    <input type="text" id ="city2">
+    <input type="text" id ="city3">
+ -->
+
+    <button onclick="displayCity()" type="button">Show City</button>
+
+    <div id="demo">
+        <ul id="dem"></ul>
+    </div>
+    <script>
+
+
+
+        function displayCity() {
+
+            var city = [
+                 "Bangalore",
+                 "Chennai",
+                 "Andhra Pradesh"
+
+            ]
+
+            for (i=0;i<city.length;i++) {
+                var myLi = document.createElement("li")
+                myLi.innerHTML = city[i]
+                document.getElementById("dem").appendChild(myLi)
+               
+            }
+
+
+
+
+
+
+        }
+
+    </script>
+</body>
+
+</html>

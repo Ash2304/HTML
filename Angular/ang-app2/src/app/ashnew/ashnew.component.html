@@ -1,0 +1,16 @@
+<p>ashnew works!</p>
+
+<button (click)="showUsers()">Show Users</button>
+<button (click)="hideUsers()">Hide Users</button>
+<button (click)="delFirst()">Delete First User</button>
+<button (click)="delLast()">Delete Last User</button>
+<button (click)="delMid()">Delete Middle User</button>
+
+<button (click)="addBeg()">Add at Begining</button>
+<button (click)="addLast()">Add at Last</button>
+<button (click)="addMid()">Add at Middle</button>
+
+
+<ul>
+    <li *ngFor = "let user of myUsers">{{user.username}}</li>
+</ul>

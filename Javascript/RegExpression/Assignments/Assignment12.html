@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Assignment 12</title>
+</head>
+<body>
+    <div id="imgg">
+        <img src= "https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+    </div>
+    <button onclick="hideImage()" type="button">Hide</button>
+    <button onclick="showImage()" type="button">Show</button>
+
+    <script>
+    
+    function hideImage(){
+        document.getElementById("imgg").style.visibility = "hidden"
+    }
+
+    function showImage(){
+        document.getElementById("imgg").style.visibility = "visible"
+    }
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Assignment 15</title>
+    <style>
+    
+    body{
+        background: grey;
+    }
+    #countdown{
+      text-align: center;
+      margin-top: 20%;
+      font-family: monospace;
+      font-style: italic;
+      font-size: 3em;
+      color: #fff
+      
+    }
+    
+    </style>
+    
+</head>
+<body>
+    <h1 style="text-align: center">Countdown Timer</h1>
+    <div id="countdown">Loading....</div>
+
+    <script>
+        var countdownElement = document.getElementById("countdown");
+        var end = new Date('2019-08-05 22:22:00');
+        var second = 1000;
+        var minute = second * 60;
+        var hour = minute * 60;
+        var day = hour * 24;
+        var timer;
+
+        function showRemaining(){
+
+            var now = new Date();
+            var distance = end - now;
+            if(distance < 0){
+                clearInterval(timer);
+                countdownElement.innerHTML = "TIME UP!!!!";
+                return;
+            }
+            var days = Math.floor(distance / day);
+            var hours = Math.floor((distance % day) / hour);
+            var minutes = Math.floor((distance % hour) / minute);
+            var seconds = Math.floor((distance % minute) /second);
+            countdownElement.innerHTML = days + 'days';
+            countdownElement.innerHTML += hours + 'hrs';
+            countdownElement.innerHTML += minutes + 'mins';
+            countdownElement.innerHTML += seconds + 'secs';
+
+        }
+        timer = setInterval(showRemaining,1000);
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Assignment 14</title>
+</head>
+<body>
+    <button onclick="STime()" type = "button">ShowTime</button>
+    <div id="time"></div>
+    <script>
+    
+    function STime(){
+        var current = new Date();
+        var hr = current.getHours();
+        var min = current.getMinutes();
+        var sec = current.getSeconds();
+
+        min = checkTime(min);
+        sec = checkTime(sec);
+
+        document.getElementById("time").innerHTML= hr + ":" + min + ":" + sec;
+        var tme = setTimeout(STime, 500);
+    }
+    
+    function checkTime(i){
+        if(i<10){
+            i = "0" + i
+        };
+        return i;
+    }
+
+    </script>
+</body>
+</html>

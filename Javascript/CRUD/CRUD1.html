@@ -11,11 +11,12 @@
 <body>
     <form action="">
         <h3>Name and Address</h3>
-        Do you use CiviCRM?
-        <label>
-            Yes <input type="radio" id="yradio">
-            No <input type="radio" id="No"> <br><br>
-        </label>
+        
+        <label for="" >Do you use CiviCRM?</label>
+            <input type="radio" name= "CiviCRM" id="ccrm" value="Yes"/>Yes
+            <input type="radio" name= "CiviCRM" id="ccrm" value="No"/>No
+<br><br>
+        
         How long have you been using CiviCRM? 
         <select name="" id="crm">
             <option value="CRM1">CRM1</option>
@@ -100,11 +101,14 @@
          </div>
          <div id="demo"></div>
     <script>
+
         var users = []
 
         function saveUser()
         {
             var det ={
+                ccrm:document.getElementById("ccrm").value,
+                // ccrm2:document.getElementById("ccrm2").value,
                 cms:document.getElementById("cms").value,
                 crm:document.getElementById("crm").value,
                 skill:document.getElementById("skill").value,
@@ -118,11 +122,22 @@
                 state:document.getElementById("state").value
 
             }
+        var radiobuttons = document.getElementsByName("CiviCRM")
+        radiobuttons.forEach(function(obj) {
+          if(obj.checked){
+              console.log(obj.value)
+            //   det.ccrm2=obj.value
+              det.ccrm =obj.value
+              displaydata(users)
+          } 
+        });
             console.log(det)
 
             users.push(det)
             clearForm(det)
             displaydata(users)
+
+
         }
 
 
@@ -174,6 +189,8 @@
         function editUser(i)
         {
             index = i;
+                document.getElementById("ccrm").value = users[i].ccrm
+                // document.getElementById("ccrm2").value = users[i].ccrm2
                 document.getElementById("cms").value = users[i].cms
                 document.getElementById("crm").value = users[i].crm
                 document.getElementById("skill").value= users[i].skill
@@ -189,6 +206,8 @@
 
         function updateDet(){
             var updatedDet = {
+                ccrm:document.getElementById("ccrm").value,
+                // ccrm2:document.getElementById("ccrm2").value,
                 cms:document.getElementById("cms").value,
                 crm:document.getElementById("crm").value,
                 skill:document.getElementById("skill").value,
@@ -240,6 +259,8 @@
             }
             document.getElementById("demo").innerHTML = results
         }
+
+        
     </script>
 </body>
 

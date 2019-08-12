@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Assignment2</title>
+
+    
+
+</head>
+<body>
+
+    <!-- <div id="demo"> -->
+        <nav id = "state">
+            <li id = "st1" onclick="dispKar()">Karnataka</li>
+            <li id ="st2" onclick="dispKer()">Kerala</li>
+            <li id ="st3" onclick="dispTamil()">TamilNadu</li>
+            <li id ="st4" onclick="dispAndhra()">AndhraPradesh</li>
+            <li id ="st5" onclick="dispHima()">HimachalPradesh</li>
+            <li id ="st6" onclick="dispGuj()">Gujarat</li>
+            <li id ="st7" onclick="dispMaha()">Maharashtra</li>
+            <li id ="st8" onclick="dispHary()">Haryana</li>
+            <li id ="st9" onclick="dispJammu()">Jammu Kashmir</li>
+            <li id ="st10" onclick="dispAruna()">ArunachalPradesh</li>
+
+        </nav>
+    <!-- </div> -->
+
+    
+
+    <div id="kar1"></div>
+    
+
+<script>
+var states =[];
+function dispKar(){
+
+    var kar = document.createElement("IMG");
+    kar.setAttribute("src","https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Mysore_Palace_Morning.jpg/1920px-Mysore_Palace_Morning.jpg");
+    kar.setAttribute("width","900");
+    kar.setAttribute("height","400");
+    document.getElementById("kar1").appendChild(kar)
+
+
+    var para = document.createElement("P1")
+    var txt = document.createTextNode("Karnataka is a state in southwest India with Arabian Sea coastlines. The capital, Bengaluru (formerly Bangalore), is a high-tech hub known for its shopping and nightlife. To the southwest, Mysore is home to lavish temples including Mysore Palace, former seat of the region’s maharajas. Hampi, once the medieval Vijayanagara empire’s capital, contains ruins of Hindu temples, elephant stables and a stone chariot. Kannada, one of the classical languages of India, is the most widely spoken and official language of the state alongside Konkani, Marathi, Tulu, Tamil, Telugu, Malayalam, Kodava and Beary.")
+    para.appendChild(txt)
+    document.getElementById("kar1").appendChild(para)
+
+}
+
+    function dispKer(){
+
+        var ker = document.createElement("IMG");
+        ker.setAttribute("src","https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Boathouse_%287063399547%29.jpg/1920px-Boathouse_%287063399547%29.jpg")
+        ker.setAttribute("width","900")
+        ker.setAttribute("height","400")
+        document.getElementById("kar1").appendChild(ker)
+
+        var para = document.createElement("P2")
+        var txt = document.createTextNode("Kerala, a state on India's tropical Malabar Coast, has nearly 600km of Arabian Sea shoreline. It's known for its palm-lined beaches and backwaters, a network of canals. Inland are the Western Ghats, mountains whose slopes support tea, coffee and spice plantations as well as wildlife. National parks like Eravikulam and Periyar, plus Wayanad and other sanctuaries, are home to elephants, langur monkeys and tigers.Capital: Thiruvananthapuram")
+        para.appendChild(txt)
+        document.getElementById("kar1").appendChild(para)
+    }
+
+    function dispTamil(){
+        var tam = document.createElement("IMG");
+        tam.setAttribute("src","https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/The_big_temple.jpg/1280px-The_big_temple.jpg")
+        tam.setAttribute("width","900")
+        tam.setAttribute("height","400")
+        document.getElementById("kar1").appendChild(tam)
+
+        var para = document.createElement("P3")
+        var txt = document.createTextNode("Tamil Nadu, a South Indian state, is famed for its Dravidian-style Hindu temples. In Madurai, Meenakshi Amman Temple has high ‘gopuram’ towers ornamented with colourful figures. On Pamban Island, Ramanathaswamy Temple is a pilgrimage site. The town of Kanyakumari, at India’s southernmost tip, is the site of ritual sunrises. Capital Chennai is known for beaches and landmarks including 1644 colonial Fort St. George. Its official language is Tamil, which is one of the longest-surviving classical languages in the world.")
+        para.appendChild(txt)
+        document.getElementById("kar1").appendChild(para)
+    }
+
+    function dispAndhra(){
+
+        var andhra = document.createElement("IMG");
+        andhra.setAttribute("src","https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Tirumala_090615.jpg/1280px-Tirumala_090615.jpg")
+        andhra.setAttribute("width","900")
+        andhra.setAttribute("height","400")
+        document.getElementById("kar1").appendChild(andhra)
+
+        var para = document.createElement("P4")
+        var txt = document.createTextNode("Andhra Pradesh, state of India, located in the southeastern part of the subcontinent. It is bounded by the Indian states of Tamil Nadu to the south, Karnataka to the southwest and west, Telangana to the northwest and north, and Odisha to the northeast. The eastern boundary is a 600-mile (970-km) coastline along the Bay of Bengal. Telangana was a region within Andhra Pradesh for almost six decades, but in 2014 it was carved off to form a separate state. The capital of both Andhra Pradesh and Telangana is Hyderabad, in west-central Telangana.The official language of Andhra Pradesh is Telugu.[9][10] The Minister of Tourism and Culture has issued a declaration of the Telugu language as a Classical Language")
+        para.appendChild(txt)
+        document.getElementById("kar1").appendChild(para)
+    }
+
+    function dispHima(){
+        var hima = document.createElement("IMG");
+    hima.setAttribute("src","https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Kinnaur_Kailash_with_Monolithic_pillar_a_79_feet_vertical_rock_formation_that_resembles_a_Shivalinga.jpg/1920px-Kinnaur_Kailash_with_Monolithic_pillar_a_79_feet_vertical_rock_formation_that_resembles_a_Shivalinga.jpg");
+    hima.setAttribute("width","900");
+    hima.setAttribute("height","400");
+    document.getElementById("kar1").appendChild(hima)
+
+
+    var para = document.createElement("P5")
+    var txt = document.createTextNode(
+        "Himachal Pradesh is a northern Indian state in the Himalayas. It's home to scenic mountain towns and resorts such as Dalhousie. Host to the Dalai Lama, Himachal Pradesh has a strong Tibetan presence. This is reflected in its Buddhist temples and monasteries, as well as its vibrant Tibetan New Year celebrations. The region is also well known for its trekking, climbing and skiing areas."
+        )
+    para.appendChild(txt)
+    document.getElementById("kar1").appendChild(para)
+    }
+// 
+    function dispGuj(){
+
+        var gujr = document.createElement("IMG");
+        gujr.setAttribute("src","https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Tarangaji_Jain_temple.jpg/1280px-Tarangaji_Jain_temple.jpg")
+        gujr.setAttribute("width","900")
+        gujr.setAttribute("height","400")
+        document.getElementById("kar1").appendChild(gujr)
+
+        var para = document.createElement("P6")
+        var txt = document.createTextNode("Gujarat, India's westernmost state, has varied terrain and numerous sacred sites. In its urban center of Ahmedabad is the Calico Museum of Textiles, displaying antique and modern Indian fabrics. Spiritual leader Mahatma Gandhi's base from 1917–1930 was Sabarmati Ashram, where his living quarters remain on view. The Jama Masjid (Friday Mosque), built in the 15th century, has a huge courtyard and a columned design.The official language is Gujarati")
+        para.appendChild(txt)
+        document.getElementById("kar1").appendChild(para)
+    }
+
+    function dispMaha(){
+
+        var mahr = document.createElement("IMG");
+        mahr.setAttribute("src","https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Gateway_of_India_at_night.jpg/1280px-Gateway_of_India_at_night.jpg")
+        mahr.setAttribute("width","900")
+        mahr.setAttribute("height","400")
+        document.getElementById("kar1").appendChild(mahr)
+
+        var para = document.createElement("P7")
+        var txt = document.createTextNode("Maharashtra, a state spanning west-central India, is best known for its fast-paced capital, Mumbai (formerly Bombay). This sprawling metropolis is the seat of the Bollywood film industry. It also has sites like the British Raj-era Gateway of India monument and cave temples at Elephanta Island. To the south is the rustic, beach-lined Konkan Coast. In the city of Pune, Aga Khan Palace is a memorial to Mahatma Gandhi.Mumbai, has a population around 18 million making it the most populous urban area in India. Nagpur hosts the winter session of the state legislature.[11] Pune is known as the 'Oxford of the East' due to the presence of several well-known educational institutions.[12][13] Nashik is known as the 'Wine Capital of India' as it has the largest number of wineries and vineyards in the country.")
+        para.appendChild(txt)
+        document.getElementById("kar1").appendChild(para)
+    }
+
+    function dispHary(){
+
+        var haryn = document.createElement("IMG");
+        haryn.setAttribute("src","https://upload.wikimedia.org/wikipedia/commons/9/99/Fort_of_Firoz_Shah_Tughlaq_at_Hisar.jpg")
+        haryn.setAttribute("width","900")
+        haryn.setAttribute("height","400")
+        document.getElementById("kar1").appendChild(haryn)
+
+        var para = document.createElement("P8")
+        var txt = document.createTextNode("Haryana is a North Indian state surrounding New Delhi on 3 sides. The Yamuna River runs along its eastern border with Uttar Pradesh. Shared with Punjab, the state capital Chandigarh is known for its modernist buildings and gridlike street plan designed by Swiss architect, Le Corbusier. The Zakir Hussain Rose Garden features 1,600 species, while its Rock Garden showcases sculptures made with recycled materials.Chandigarh is the state capital.")
+        para.appendChild(txt)
+        document.getElementById("kar1").appendChild(para)
+    }
+        function dispJammu(){
+            var jammu = document.createElement("IMG");
+        jammu.setAttribute("src","https://blog.ipleaders.in/wp-content/uploads/2018/07/BV-Acharya-43.jpg")
+        jammu.setAttribute("width","900")
+        jammu.setAttribute("height","400")
+        document.getElementById("kar1").appendChild(jammu)
+
+        var para = document.createElement("P9")
+        var txt = document.createTextNode("Jammu and Kashmir is a large region in the southern portion of Kashmir which is administered by India as a state, and often denoted by the acronym, J&K. It is located mostly in the Himalayan mountains, and shares borders with the Indian states of Himachal Pradesh and Punjab to the south. Jammu and Kashmir consists of three regions: Jammu, the Kashmir Valley and Ladakh. Srinagar is the summer capital, and Jammu is the winter capital. Jammu and Kashmir is the only state in India with a Muslim-majority population.")
+        para.appendChild(txt)
+        document.getElementById("kar1").appendChild(para)
+        }
+
+        function dispAruna(){
+            
+        var aruna = document.createElement("IMG");
+        aruna.setAttribute("src","http://www.arunachalpradesh.gov.in/wp-content/uploads/2017/08/MOB2.jpg")
+        aruna.setAttribute("width","900")
+        aruna.setAttribute("height","400")
+        document.getElementById("kar1").appendChild(aruna)
+
+        var para = document.createElement("P10")
+        var txt = document.createTextNode("Arunachal Pradesh is one of the 29 states of India and is the northeastern-most state of the country. Arunachal Pradesh borders the states of Assam and Nagaland to the south and shares international borders with Bhutan in the west, Myanmar in the east and is separated from China in the north by the McMahon Line.Itanagar is the capital of the state.")
+        para.appendChild(txt)
+        document.getElementById("kar1").appendChild(para)
+        }
+
+</script>
+    </select>
+</body>
+</html>

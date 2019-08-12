@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Assignment 5</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <form action="">
+        <h3>Form</h3>
+        First Name: <input type="text" id="fname"><br><br>
+        Last Name : <input type="text" id="lname"><br><br>
+        Email : <input type="text" id="email"><br><br>
+
+        <label for="">Gender</label>
+        <input type="radio" name="gender" id="gid" value="Male" />Male
+        <input type="radio" name="gender" id="gid" value="Female" />Female<br><br>
+
+        Phone No : <input type="text" id="phno"><br><br>
+
+        City : <input type="text" id="city"><br><br>
+
+        State : <select name="" id="state">
+            <option value="Karnataka">Karnataka</option>
+            <option value="Kerala">Kerala</option>
+            <option value="TamilNadu">TamilNadu</option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Maharashtra">Maharashtra</option>
+        </select>
+
+        <br><br>
+        <input type="checkbox" name="agree" id="myCheck" value="" />I agree to the terms and conditions <br />
+
+    </form>
+    <br>
+    <button onclick="saveUser()" type="button">Submit</button>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Phone No</th>
+                <th scope="col">City</th>
+                <th scope="col">State</th>
+
+            </tr>
+        </thead>
+        <tbody id="myTable">
+        </tbody>
+    </table>
+
+    <script>
+
+        users = []
+
+        function saveUser() {
+
+            var user = {
+                fname: '',
+                lname: '',
+                email: '',
+                gid: '',
+                phno: '',
+                city: '',
+                state: ''
+            }
+
+
+            for (a in user) {
+                if (a != "gid" && a != "state") {
+                    user[a] = document.getElementById(a).value
+
+                }
+
+                else if (a == "gid") {
+                    var radiobuttons = document.getElementsByName("gender");
+
+                    radiobuttons.forEach(function (obj) {
+
+                        if (obj.checked) {
+                            console.log(obj.value)
+                            user.gid = obj.value
+                            displayData(users)
+                        }
+                    });
+                } else if (a == "state") {
+                    var allcheckBoxes = document.getElementsByName("state");
+                    allcheckBoxes.forEach(function (obj) {
+                        if (obj.checked) {
+                            console.log(obj.value);
+                        }
+                    });
+                }
+
+
+
+            }
+
+
+            console.log(user)
+            users.push(user)
+            clearForm(user)
+            displayData(users)
+        }
+
+        function displayData(users) {
+            document.getElementById("myTable").innerHTML = ""
+            for (i = 0; i < users.length; i++) {
+                var tr = document.createElement("tr")
+                for (a in users[i]) {
+                    var td = document.createElement("td")
+                    td.innerHTML = users[i][a]
+                    tr.appendChild(td)
+                }
+                document.getElementById("myTable").appendChild(tr)
+            }
+        }
+
+        function clearForm(obj) {
+            for (a in obj) {
+                document.getElementById(a).value = ""
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

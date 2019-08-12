@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Assignment3</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <button onclick="getUsers()" type="button">Get</button>
+
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+          </tr>
+        </thead>
+        <tbody id = "myTable">
+          
+        </tbody>
+      </table>
+
+      <button onclick="delFirst()" type="button">Delete First</button>
+      <button onclick="delLast()" type="button">Delete Last</button>
+      <button onclick="delSel()" type="button">Delete</button>
+      <button onclick="delOdd()" type="button">Del Odd</button>
+      <button onclick="delEven()" type="button">Del Even</button>
+      <button onclick="addback()" type="button">Add</button>
+
+      Enter the number: <input type="text" id="myText">
+
+      <script>
+      
+      var data;
+    function getUsers(){
+
+        var getInfo = new XMLHttpRequest();
+        getInfo.onreadystatechange = function(){
+            if(getInfo.readyState == 4 && getInfo.status == 200){
+                data = JSON.parse(getInfo.responseText);
+                console.log(data)
+                displayData(data);
+            }
+        }
+
+        getInfo.open("Get","http://localhost:3000/asha")
+        getInfo.send();
+    }
+
+    function displayData(data){
+            document.getElementById("myTable").innerHTML = ""
+            for(i=0;i<data.length;i++){
+                var tr = document.createElement("tr")
+                for(a in data[i]){
+                    var td = document.createElement("td")
+                    td.innerHTML= data[i][a]
+                    tr.appendChild(td)
+                }
+                document.getElementById("myTable").appendChild(tr)
+            }
+    }
+
+    function delFirst(){
+        // Delete first row
+        data.shift();
+        displayData(data)
+    }
+
+    function delLast(){
+        // Delete last row
+        data.pop();
+        displayData(data)
+    }
+
+    function delSel(i){
+
+        
+            data.splice(i,1)
+            displayData(data)
+    }
+
+    function delOdd(){
+        for(i=0;i<data.length;i++){
+            if(data[i]%2 != 0){
+                data.splice(i,1)
+            }
+        }
+        displayData(data)
+    }
+
+    function delEven(){
+        for(i=0;i<data.length;i++){
+            if(data[i]%2 == 0){
+                data.splice(i,1)
+            }
+        }
+        displayData(data)
+    }
+    
+    function addback(){
+
+        for(i=0;i<data.length;i++){
+            if(data[i]%2 == 0){
+                
+            }
+        }
+
+        }
+      </script>
+
+</body>
+</html>

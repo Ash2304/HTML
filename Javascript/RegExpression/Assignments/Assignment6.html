@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Assignment 6</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <form action="">
+        <h3>Form</h3>
+        First Name: <input type="text" id="fname"><br><br>
+        Last Name : <input type="text" id="lname"><br><br>
+        Email     : <input type="text" id="email"><br><br>
+        Phone No  : <input type="text" id="phno"><br><br>
+
+        
+
+    </form>
+
+    <button onclick="saveUser()" type="button">Submit</button>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone No</th>
+
+            </tr>
+        </thead>
+        <tbody id="myTable">
+        </tbody>
+    </table>
+
+    <script>
+        users = []
+        function saveUser(){
+
+            var user = {
+                fname:'',
+                lname:'',
+                email:'',
+                phno:''
+            }
+
+            for(a in user){
+        
+                        user[a] = document.getElementById(a).value
+                    }
+                
+            console.log(user)
+            users.push(user)
+            clearForm(user)
+            displayData(users)
+        }
+
+        function displayData(users) {
+            document.getElementById("myTable").innerHTML = ""
+            for (i = 0; i < users.length; i++) {
+                var tr = document.createElement("tr")
+                for (a in users[i]) {
+                    var td = document.createElement("td")
+                    td.innerHTML = users[i][a]
+                    tr.appendChild(td)
+                }
+                var editTd = document.createElement("td")
+
+                var editBtn = document.createElement("button")
+                editBtn.setAttribute("onclick", "editUser("+i+")")
+                editBtn.innerHTML = "EDIT"
+
+                editTd.appendChild(editBtn)
+
+                tr.appendChild(editTd)
+
+                document.getElementById("myTable").appendChild(tr)
+            }
+        }
+
+            function editUser(i){
+                 index = i;
+            
+                 for(i=0;i<users.length;i++){
+                     for(a in users[i]){
+                         document.getElementById(a).value = users[i][a]
+                     }
+                 }
+            }
+
+        function clearForm(obj) 
+        {
+            for(a in obj){
+                document.getElementById(a).value = ""
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

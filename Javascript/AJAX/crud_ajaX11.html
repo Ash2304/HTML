@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ajax2</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <button onclick = "getUser()">Get</button>
+    <table class="table">
+        <thead>
+          
+        </thead>
+        <tbody id = "myTable">
+          
+        </tbody>
+      </table>
+    <script>
+    
+        function getUser(){
+            var getInfo = new XMLHttpRequest();
+            getInfo.onreadystatechange = function(){
+                if(getInfo.status == 200 && getInfo.readyState == 4){
+                    var data = JSON.parse(getInfo.responseText)
+                    console.log(data);
+                    displayData(data)
+                }
+            }
+    getInfo.open("Get","http://www.filltext.com/?rows=10&id={index}&email={email}&username={username}&password={randomString|5}&pretty=true");
+    getInfo.send();
+        }
+        function displayData(data){
+            document.getElementById("myTable").innerHTML = ""
+            for(i=0; i<data.length; i++){
+                var tr = document.createElement("tr");
+                for(a in data[i]){
+                    var td = document.createElement("td");
+                    td.innerHTML = data[i][a];
+                    tr.appendChild(td)
+                }
+                document.getElementById("myTable").appendChild(tr);
+            }
+        }
+    </script>
+
+</body>
+</html>

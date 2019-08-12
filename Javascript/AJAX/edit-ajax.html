@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+        <form action="">
+                ID: <input type = "text" id = "id"><br>
+                Email: <input type="text" id="email"><br>
+                Username: <input type="text" id="username"><br>
+                Password: <input type="text" id="password">
+            </form>
+            <button onclick="updateUser()" type="button">Update</button>
+
+            <script>
+
+
+                var data;
+    // function getUser(){
+
+    //     var getInfo = new XMLHttpRequest();
+    //     getInfo.onreadystatechange = function(){
+    //         if(getInfo.readyState == 4 && getInfo.status == 200){
+    //             data = JSON.parse(getInfo.responseText);
+    //             console.log(data)
+    //             displayData(data);
+    //         }
+    //     }
+
+    //     getInfo.open("Get","http://www.filltext.com/?rows=10&id={index}&email={email}&username={username}&password={randomString|5}&pretty=true")
+    //     getInfo.send();
+    // }
+
+                function editUser(i){
+            index =i
+            console.log(data[i])
+           document.getElementById("id").value = data[i].id
+           document.getElementById("email").value = data[i].email
+           document.getElementById("username").value = data[i].username
+           document.getElementById("password").value = data[i].password
+
+        }
+
+        function updateUser(){
+            var updatedDet = {
+                id:document.getElementById("id").value,
+                email:document.getElementById("email").value,
+                username:document.getElementById("username").value,
+                password:document.getElementById("password").value
+            }
+            data[index] = updatedDet
+            displayData(data)
+        }
+            
+        function displayData(data){
+            document.getElementById("myTable").innerHTML = ""
+            for(i=0;i<data.length;i++){
+                var tr = document.createElement("tr")
+                for(a in data[i]){
+                    var td = document.createElement("td")
+                    td.innerHTML= data[i][a]
+                    tr.appendChild(td)
+                }
+                document.getElementById("myTable").appendChild(tr)
+            }
+    }
+
+            </script>
+    
+</body>
+</html>

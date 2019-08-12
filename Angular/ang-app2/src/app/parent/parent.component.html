@@ -1,0 +1,6 @@
+<p>parent works!</p>
+<h2>{{message}}</h2>
+<h3>{{obj}}</h3>
+<hr>
+<app-child (sendData)="receiveData($event)" (sendObj)="receobj($event)"></app-child>
+<!-- <app-child [receive]="message" [receobj]="obj" [recearray]="myArray"></app-child> -->

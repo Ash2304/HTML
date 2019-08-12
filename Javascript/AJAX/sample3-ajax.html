@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick = "getData()">Get</button>
+    <div id="demo"></div>
+    
+    <!-- <button onclick = "getUser()">Details</button> -->
+
+    <script>
+    
+    function getData(){
+        var getInfo = new XMLHttpRequest();
+        getInfo.onreadystatechange = function(){
+            if(getInfo.status ==  200 && getInfo.readyState == 4){
+                var data = JSON.parse(getInfo.responseText)
+                // console.log(getInfo.responseText);
+                // document.getElementById("demo").innerHTML = getInfo.responseText;
+
+                var det = {
+                    id:document.getElementById("id").value,
+                    name:document.getElementById("name").value,
+                    username:document.getElementById("username").value,
+                    email:document.getElementById("email").value,
+                    street:document.getElementById("street").value,
+                    suite:document.getElementById("street").value,
+                    city:document.getElementById("street").value,
+                    zipcode:document.getElementById("street").value,
+
+                }
+
+            //for(i=0; i<data.length; i++){
+                // console.log(data[i].name);
+                console.log(det)
+                // document.getElementById("demo").innerHTML = getInfo.responseText;
+            
+            }
+        };
+
+        getInfo.open("Get","https://jsonplaceholder.typicode.com/users");
+        getInfo.send();
+    }
+    </script>
+</body>
+</html>
