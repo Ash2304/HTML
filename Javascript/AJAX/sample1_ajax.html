@@ -22,10 +22,7 @@
           }
         };
 
-        getInfo.open(
-          "GET",
-          "http://www.filltext.com/?rows=2&fname={firstName}&lname={lastName}&pretty=true"
-        );
+        getInfo.open("GET", "https://jsonplaceholder.typicode.com/users");
         getInfo.send();
       }
     </script>
