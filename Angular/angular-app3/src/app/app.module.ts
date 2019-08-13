@@ -11,6 +11,8 @@ import { ChildHttpComponent } from "./child-http/child-http.component";
 import { FormsComponent } from "./forms/forms.component";
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { ReactiveFormComponent } from "./reactive-form/reactive-form.component";
+import { HomeComponent } from "./home/home.component";
+import { AboutComponent } from "./about/about.component";
 
 @NgModule({
   declarations: [
@@ -20,11 +22,13 @@ import { ReactiveFormComponent } from "./reactive-form/reactive-form.component";
     HttpCompComponent,
     ChildHttpComponent,
     FormsComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    HomeComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    AppRoutingModule, //Step 7 : Adding the Router Module In App.module.ts
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule
